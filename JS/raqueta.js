@@ -1,15 +1,14 @@
 class Raqueta {
-    constructor(jugador, largo) {
+    constructor(jugador, largo, lienzo) {
         this.jugador = jugador
         this.largo = largo
+        this.lienzo = lienzo
     }
-    dibujarRaqueta(lienzo, heigth) {
-        let ejeY = (heigth / 2) - 30
-        lienzo.fillStyle = "#fff"
-        lienzo.fillRect(this.largo, ejeY, 8, 20)
-        console.log(ejeY)
+    dibujarRaqueta(heigth) {
+        this.lienzo.fillStyle = "#fff"
+        this.lienzo.fillRect(this.largo, heigth, 8, 20)
     }
-    moveY(ejeY) {
+    repaintRaqueta(height) {
+        this.lienzo.clearRect(this.largo - 1, height - 1, 12, 24)
     }
-
 }
